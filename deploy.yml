@@ -26,11 +26,11 @@ profiles:
     app:
       resources:
         cpu:
-          units: 2.0
+          units: 1.0
         memory:
           size: 1Gi
         storage:
-          size: 50Gi
+          size: 2Gi
   placement:
     akash: 
       attributes:
