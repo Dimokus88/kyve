@@ -20,5 +20,8 @@ mv evm-linux /usr/bin/kyve
 
 kyve --version
 
+for ((;;))
+do
 $(which kyve) --name "${MONIKER}" --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network korellia --verbose
-sleep infinity
+sleep 10m
+done
