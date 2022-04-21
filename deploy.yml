@@ -1,0 +1,50 @@
+---
+version: "2.0"
+
+services:
+  app:
+    image: dimokus88/kyveprotokol:0.0.1
+    env:
+     - "POOL=pool_number"
+     - "MNEMONIC=mnemohic_kyve_wallet" 
+     - "STAKE=ammount_to_stake"
+     - "MONIKER=Your_moniker"
+     - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Use cloud disk for a send arweave.json, just paste link to wallet file. Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька.
+     - "LINK_KYVE_VERSION=https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip"
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+      - port: 22
+        as: 22
+        to:
+          - global: true
+          
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 2.0
+        memory:
+          size: 1Gi
+        storage:
+          size: 50Gi
+  placement:
+    akash: 
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+    
+      pricing:
+        app:
+          denom: uakt
+          amount: 10000
+deployment:
+  app:
+    akash:
+      profile: app
+      count: 1 #max 2 count
