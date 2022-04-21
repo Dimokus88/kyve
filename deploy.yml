@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.0.1
+    image: dimokus88/kyveprotokol:0.0.2
     env:
      - "POOL=pool_number"
      - "MNEMONIC=mnemohic_kyve_wallet" 
