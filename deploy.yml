@@ -5,7 +5,6 @@ services:
   app:
     image: dimokus88/kyveprotokol:0.0.2
     env:
-     - "POOL=pool_number"
      - "MNEMONIC=mnemohic_kyve_wallet" 
      - "STAKE=ammount_to_stake"
      - "MONIKER=Your_moniker"
@@ -16,11 +15,6 @@ services:
         as: 80
         to:
           - global: true
-      - port: 22
-        as: 22
-        to:
-          - global: true
-          
 profiles:
   compute:
     app:
