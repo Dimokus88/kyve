@@ -22,9 +22,9 @@ profiles:
         cpu:
           units: 1.0
         memory:
-          size: 1Gi
+          size: 4Gi
         storage:
-          size: 2Gi
+          size: 20Gi
   placement:
     akash: 
       attributes:
