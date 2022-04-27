@@ -15,7 +15,7 @@ ___
 
 ## 1. Запрос токенов с крана и подготовка кошельков
 
-* Идем на сайт  [app.kyve.network](https://app.kyve.network/) и подключаем кошелек:
+* Идем на сайт  [app.kyve.network](https://app.kyve.network/) и подключаем кошелек Keplr:
 
 <div align="center">
   
