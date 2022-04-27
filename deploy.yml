@@ -5,6 +5,7 @@ services:
   app:
     image: dimokus88/kyveprotokol:0.0.4
     env:
+     - "POOL=0" 
      - "MNEMONIC=mnemohic_kyve_wallet" 
      - "STAKE=ammount_to_stake"
      - "MONIKER=Your_moniker"
