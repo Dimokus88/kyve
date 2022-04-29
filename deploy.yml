@@ -3,14 +3,15 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.0.4
+    image: dimokus88/kyveprotokol:0.0.6
     env:
-     
+     - "POOL=POOL" 
      - "MNEMONIC=mnemohic_kyve_wallet" 
      - "STAKE=ammount_to_stake"
      - "MONIKER=Your_moniker"
      - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Use cloud disk for a send arweave.json, just paste link to wallet file. Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька.
      - "LINK_KYVE_VERSION=https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip"
+     - "LINK_KYVE_Bitcoin=https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip"
     expose:
       - port: 80
         as: 80
