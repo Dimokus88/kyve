@@ -5,7 +5,7 @@ services:
   app:
     image: dimokus88/kyveprotokol:0.0.6
     env:
-     - "POOL=0" 
+     - "POOL=0" # 0 - пул Moonbeam; 1 - пул Avalanche // C-Chain; 3 - пул Bitcoin
      - "MNEMONIC=mnemohic_kyve_wallet" 
      - "STAKE=ammount_to_stake"
      - "MONIKER=Your_moniker"
