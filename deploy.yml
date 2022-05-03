@@ -5,13 +5,16 @@ services:
   app:
     image: dimokus88/kyveprotokol:0.0.6
     env:
-     - "POOL=0" # 0 - пул Moonbeam; 1 - пул Avalanche // C-Chain; 3 - пул Bitcoin
-     - "MNEMONIC=mnemohic_kyve_wallet" 
-     - "STAKE=ammount_to_stake"
-     - "MONIKER=Your_moniker"
-     - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Use cloud disk for a send arweave.json, just paste link to wallet file. Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька.
+     - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется)
+     - "POOL=0" # 0 - пул Moonbeam; 1 - пул Avalanche // C-Chain; 3 - пул Bitcoin ; 4 - пул Solana ;5 - пул zilliqa
+     - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve
+     - "STAKE=ammount_to_stake" # количество kyve в стейк
+     - "MONIKER=Your_moniker" # имя ноды
+     - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
      - "LINK_KYVE_VERSION=https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip"
      - "LINK_KYVE_Bitcoin=https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip"
+     - "LINK_KYVE_Solana=https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip"
+     - "LINK_KYVE_zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
     expose:
       - port: 80
         as: 80
@@ -26,7 +29,7 @@ profiles:
         memory:
           size: 4Gi
         storage:
-          size: 20Gi
+          size: 1Gi
   placement:
     akash: 
       attributes:
