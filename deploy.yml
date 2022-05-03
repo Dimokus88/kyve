@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.0.6
+    image: dimokus88/kyveprotokol:0.0.7
     env:
      - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется)
      - "POOL=0" # 0 - пул Moonbeam; 1 - пул Avalanche // C-Chain; 3 - пул Bitcoin ; 4 - пул Solana ;5 - пул zilliqa
