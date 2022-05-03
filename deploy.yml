@@ -14,7 +14,7 @@ services:
      - "LINK_KYVE_VERSION=https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip"
      - "LINK_KYVE_Bitcoin=https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip"
      - "LINK_KYVE_Solana=https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip"
-     - "LINK_KYVE_zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
+     - "LINK_KYVE_Zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
     expose:
       - port: 80
         as: 80
