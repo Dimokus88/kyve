@@ -54,11 +54,21 @@ then
 	echo ==================================
 	echo ="ВНИМАНИЕ! Выбран пул 5 (Zilliqa)"=
 	echo ==================================
-	$(which  kyve-Zilliqa-linux) --name "${MONIKER}" --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network korellia --verbose
+	$(which  kyve-zilliqa-linux) --name "${MONIKER}" --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network korellia --verbose
 	echo ===============================================================================================
 	echo ="Недостаточно средств для попадания в валидаторы, следующая попытка подключения через 2 минуты"=
 	echo ===============================================================================================
 	sleep 2m
 fi 
-
+if [[ $POOL == 6 ]]
+then
+	echo ===============================================
+	echo ="ВНИМАНИЕ! Выбран пул 6 (Near)"=
+	echo ===============================================
+	$(which  kyve-near-linux) --name "${MONIKER}" --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network korellia --verbose
+	echo ===============================================================================================
+	echo ="Недостаточно средств для попадания в валидаторы, следующая попытка подключения через 2 минуты"=
+	echo ===============================================================================================
+	sleep 2m
+fi 
 done
