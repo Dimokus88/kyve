@@ -80,7 +80,7 @@ ___
 
 ## 2. Разворачиваем ноду KYVE
 На вашем кошельке Akash должно быть более 5 АКТ (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах Gate, AsendeX, Osmosis . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
->Сейчас доступно 5 пулов, контейнер настроен таким образом, что если у вас нехватает депозита для стейка в пуле 0, то нода переключится на пул 1 и так далее. Таким образом, нода будет перебирать пулы пока не подключится. Попытки подключения делаются раз в 2 минуты. Вся информация будет выводится во вкладку LOGS.  
+>В автоматическом режиме, контейнер настроен таким образом, что если у вас нехватает депозита для стейка в пуле 0, то нода переключится на пул 1 и так далее. Таким образом, нода будет перебирать пулы пока не подключится. Попытки подключения делаются раз в 2 минуты. Вся информация будет выводится во вкладку LOGS. В ручном режиме пулы переключаются изменением SDL и обновлением деплоемента. 
 
 * Открываем Akashlytics, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
 
@@ -104,13 +104,7 @@ ___
 
 В поле ***LINK_ARWEAVE_WALLET*** - прямую сылку на скачивание файла вашего кошелька Arweave, сохраненного на гугл диск как было описано выше.
 
-В поле ***LINK_KYVE_VERSION*** - указана ссылка на версию ноды, при необходимости можно изменить.
-
-В поле ***LINK_KYVE_Bitcoin*** - указана ссылка на версию ноды пула ```Bitcoin```, при необходимости можно изменить.
-
-В поле ***LINK_KYVE_Solana*** - указана ссылка на версию ноды пула ```Solana```, при необходимости можно изменить.
-
-В поле ***LINK_KYVE_Zilliqa*** - указана ссылка на версию ноды пула ```Zilliqa```, при необходимости можно изменить.
+В поле ***LINK_KYVE_XXXXXX*** - указаны ссылки на версии нод, при необходимости их можно изменить.
 
 Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды KYVE рекомендуется ```1 CPU x 4 GB RAM x 1 GB SSD```.
 
@@ -192,7 +186,7 @@ Save is.
 
 ## 2. Deploy the node KYVE
 You must have more than 5 AKT on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community [Akash RU](https://t.me/akash_ru) we regularly hold events in which we distributeАКТ.
->Now there are 5 pools available, the container is configured in such a way that if you do not have enough deposit for a stake in pool 0, then the node will switch to pool 1 and so on. Thus, the node will iterate over the pools until it connects. Connection attempts are made every 2 minutes. All information will be displayed in the tab LOGS.  
+>in automatic mode, the container is configured in such a way that if you do not have enough deposit for a stake in pool 0, then the node will switch to pool 1 and so on. Thus, the node will iterate over the pools until it connects. Connection attempts are made every 2 minutes. All information will be displayed in the tab LOGS. In manual mode, pools are switched by changing the SDL and updating the deployment.  
 
 * Open Akashlytics,if you don't have it installed, then [link to download](https://www.akashlytics.com/deploy).
 
@@ -216,13 +210,7 @@ In the column ***MONIKER*** - insert node name.
 
 In the column ***LINK_ARWEAVE_WALLET*** -direct link to download your Arweave wallet file saved to google drive as described above.
 
-In the column ***LINK_KYVE_VERSION*** - a link to the version of the node is indicated, if necessary, you can change.
-
-In the column ***LINK_KYVE_Bitcoin*** - a link to the version of the node is indicated ```Bitcoin```, if necessary, you can change.
-
-In the column ***LINK_KYVE_Solana*** - a link to the version of the node is indicated ```Solana```, if necessary, you can change.
-
-In the column ***LINK_KYVE_Zilliqa*** - a link to the version of the node is indicated ```Zilliqa```, if necessary, you can change.
+In the column ***LINK_KYVE_XXXXXXX*** - references to node versions are indicated, they can be changed if necessary.
 
 In the column ```resources``` we expose the rented capacity. recommended for KYVE node ```1 CPU x 4 GB RAM x 1 GB SSD```.
 
