@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.0.9
+    image: dimokus88/kyveprotokol:0.1.1
     env:
      - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется). "yes" - automatic pool change is enabled; "no" - Manual pool change via deployment update (recommended)
      - "POOL=0" # 0 -Moonbeam; 1 -Avalanche // C-Chain; 3 -Bitcoin ; 4 -Solana ;5 -zilliqa;6 -Near;7-Selo;8-Evmos EVM
