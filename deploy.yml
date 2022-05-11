@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.0.8
+    image: dimokus88/kyveprotokol:0.0.9
     env:
      - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется). "yes" - automatic pool change is enabled; "no" - Manual pool change via deployment update (recommended)
-     - "POOL=0" # 0 -Moonbeam; 1 -Avalanche // C-Chain; 3 -Bitcoin ; 4 -Solana ;5 -zilliqa;6 -Near
+     - "POOL=0" # 0 -Moonbeam; 1 -Avalanche // C-Chain; 3 -Bitcoin ; 4 -Solana ;5 -zilliqa;6 -Near;7-Selo;8-Evmos EVM
      - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve.
      - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
      - "MONIKER=Your_moniker" # имя ноды
@@ -16,6 +16,7 @@ services:
      - "LINK_KYVE_Solana=https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip"
      - "LINK_KYVE_Zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
      - "LINK_KYVE_Near=https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip"
+     - "LINK_KYVE_Celo=https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip"
     expose:
       - port: 80
         as: 80
