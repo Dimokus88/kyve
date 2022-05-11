@@ -11,7 +11,7 @@ services:
      - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
      - "MONIKER=Your_moniker" # имя ноды
      - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
-     - "LINK_KYVE_VERSION=https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip"
+     - "LINK_KYVE_VERSION=https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-evm-linux.zip"
      - "LINK_KYVE_Bitcoin=https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip"
      - "LINK_KYVE_Solana=https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip"
      - "LINK_KYVE_Zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
