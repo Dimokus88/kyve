@@ -17,6 +17,8 @@ services:
      - "LINK_KYVE_Zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
      - "LINK_KYVE_Near=https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip"
      - "LINK_KYVE_Celo=https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip"
+     - "LINK_KYVE_Cosmos=https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip"
+     
     expose:
       - port: 80
         as: 80
