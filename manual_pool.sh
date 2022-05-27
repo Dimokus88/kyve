@@ -171,4 +171,16 @@ then
 	mv kyve-evm-linux /usr/bin/kyve
 	starting
 fi 
+
+if [[ $POOL == 14 ]]
+then
+	echo ===================================
+	echo ="ВНИМАНИЕ! Выбран пул 11 (Cronos)"=
+	echo ===================================
+	wget -O kyve.zip ${LINK_KYVE_Cosmos}  
+	unzip kyve.zip 
+	rm kyve.zip 
+	mv kyve-cosmos-linux /usr/bin/kyve
+	starting
+fi
 done
