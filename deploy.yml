@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.1.9
+    image: dimokus88/kyveprotokol:0.2.0
     env:
      - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется). "yes" - automatic pool change is enabled; "no" - Manual pool change via deployment update (recommended)
-     - "POOL=0" # 0-Moonbeam;1-Avalanche//C-Chain;3 -Bitcoin;4 -Solana;5-zilliqa;6-Near;7-Selo;8-Evmos EVM;9-Cosmos Hub;10-Injective;11-Evmos Cosmos;12-Axelar;13-Aurora;14-Cronos
+     - "POOL=0" # 0-Moonbeam;1-Avalanche//C-Chain;3 -Bitcoin;4 -Solana;5-zilliqa;6-Near;7-Selo;8-Evmos EVM;9-Cosmos Hub;10-Injective;11-Evmos Cosmos;12-Axelar;13-Aurora;14-Cronos;15-Terra
      - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve.
      - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
      - "MONIKER=Your_moniker" # имя ноды
