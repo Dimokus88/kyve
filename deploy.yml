@@ -9,7 +9,7 @@ services:
      - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve.
      - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
      - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
-     expose:
+    expose:
       - port: 80
         as: 80
         to:
