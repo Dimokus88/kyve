@@ -3,23 +3,13 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.2.0
+    image: dimokus88/kyveprotokol:0.3.0
     env:
-     - "AUTO_POOL=no" # yes - автоматическая смена пула включена; no - смена пула в ручном режиме через обновление развертиывания(рекомендуется). "yes" - automatic pool change is enabled; "no" - Manual pool change via deployment update (recommended)
      - "POOL=0" # 0-Moonbeam;1-Avalanche//C-Chain;3 -Bitcoin;4 -Solana;5-zilliqa;6-Near;7-Selo;8-Evmos EVM;9-Cosmos Hub;10-Injective;11-Evmos Cosmos;12-Axelar;13-Aurora;14-Cronos;15-Terra
      - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve.
      - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
-     - "MONIKER=Your_moniker" # имя ноды
      - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
-     - "LINK_KYVE_VERSION=https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-evm-linux.zip"
-     - "LINK_KYVE_Bitcoin=https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip"
-     - "LINK_KYVE_Solana=https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip"
-     - "LINK_KYVE_Zilliqa=https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip"
-     - "LINK_KYVE_Near=https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip"
-     - "LINK_KYVE_Celo=https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip"
-     - "LINK_KYVE_Cosmos=https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip"
-     
-    expose:
+     expose:
       - port: 80
         as: 80
         to:
