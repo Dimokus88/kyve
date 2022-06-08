@@ -8,7 +8,7 @@ services:
      - "POOL=0" 
      - "MNEMONIC="
      - "STAKE="
-     - "LINK_ARWEAVE_WALLET=https://drive.google.com/uc?export=download&id=***"
+     - "LINK_ARWEAVE_WALLET="
      
     expose:
       - port: 80
