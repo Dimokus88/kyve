@@ -3,27 +3,38 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/kyveprotokol:0.3.0
+    image: dimokus88/clan:0.0.8
+
+    
     env:
-     - "POOL=0" # 0-Moonbeam;1-Avalanche//C-Chain;3 -Bitcoin;4 -Solana;5-zilliqa;6-Near;7-Selo;8-Evmos EVM;9-Cosmos Hub;10-Injective;11-Evmos Cosmos;12-Axelar;13-Aurora;14-Cronos;15-Terra
-     - "MNEMONIC=mnemohic_kyve_wallet" # seed фраза от тестового кошелька с kyve.
-     - "STAKE=ammount_to_stake" # количество kyve в стейк. Ammount to stake kyve.
-     - "LINK_ARWEAVE_WALLET=link_to_arweave_wallet" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
+     - "my_root_password=" # пароль root для подключения по ssh
+     - "MONIKER=" # имя ноды (Если нетрудно, укажите в имени ноды Akash, например: DimokusAkash
+     - "MNEMONIC=" # seed фраза от кошелька
+     - "LINK_KEY=" # ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
+    
+     
     expose:
       - port: 80
         as: 80
         to:
           - global: true
+      - port: 22
+        as: 22
+        to:
+          - global: true
+        
 profiles:
   compute:
     app:
       resources:
         cpu:
-          units: 1.0
+          units: 2.0
         memory:
           size: 4Gi
         storage:
-          size: 1Gi
+          size: 70Gi
+        
+        
   placement:
     akash: 
       attributes:
@@ -34,9 +45,9 @@ profiles:
       pricing:
         app:
           denom: uakt
-          amount: 10000
+          amount: 1000
 deployment:
   app:
     akash:
       profile: app
-      count: 1 #max 2 count
+      count: 1 
