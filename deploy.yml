@@ -6,7 +6,7 @@ services:
     image: dimokus88/kyveprotokol:0.3.0
     env:
      - "POOL=0" # 0-Moonbeam;1-Avalanche//C-Chain;3 -Bitcoin;4 -Solana;5-zilliqa;6-Near;7-Selo;8-Evmos EVM;9-Cosmos Hub;10-Injective;11-Evmos Cosmos;12-Axelar;13-Aurora;14-Cronos;15-Terra
-     - "MNEMONIC="# seed фраза от тестового кошелька с kyve.
+     - "MNEMONIC=" # seed фраза от тестового кошелька с kyve.
      - "STAKE=" # количество kyve в стейк. Ammount to stake kyve.
      - "LINK_ARWEAVE_WALLET=" #Используйте облако для передачи файла в контейнер, просто вставьте ссылку на файл кошелька. Use cloud disk for a send arweave.json, just paste link to wallet file. 
      
