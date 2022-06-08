@@ -79,8 +79,7 @@ ___
 ***Так же сохраните мнемоник фразу от кошелька с KYVE.***
 
 ## 2. Разворачиваем ноду KYVE
-На вашем кошельке Akash должно быть более 5 АКТ (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах Gate, AsendeX, Osmosis . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
->В автоматическом режиме, контейнер настроен таким образом, что если у вас нехватает депозита для стейка в пуле 0, то нода переключится на пул 1 и так далее. Таким образом, нода будет перебирать пулы пока не подключится. Попытки подключения делаются раз в 2 минуты. Вся информация будет выводится во вкладку LOGS. В ручном режиме пулы переключаются изменением SDL и обновлением деплоемента. 
+> На вашем кошельке Akash должно быть более 5 АКТ (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах Gate, AsendeX, Osmosis . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
 
 * Открываем Akashlytics, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
 
@@ -176,8 +175,7 @@ Save is.
 ***Also save the mnemonic phrase from the wallet with KYVE.***
 
 ## 2. Deploy the node KYVE
-You must have more than 5 AKT on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community [Akash RU](https://t.me/akash_ru) we regularly hold events in which we distributeАКТ.
->in automatic mode, the container is configured in such a way that if you do not have enough deposit for a stake in pool 0, then the node will switch to pool 1 and so on. Thus, the node will iterate over the pools until it connects. Connection attempts are made every 2 minutes. All information will be displayed in the tab LOGS. In manual mode, pools are switched by changing the SDL and updating the deployment.  
+> You must have more than 5 AKT on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community [Akash RU](https://t.me/akash_ru) we regularly hold events in which we distributeАКТ.
 
 * Open Akashlytics,if you don't have it installed, then [link to download](https://www.akashlytics.com/deploy).
 
