@@ -92,19 +92,13 @@ ___
 
 Давайте раберем что там есть, итак раздел ```services``` здесь указывается docker образ ноды, а также блок с переменными окружения ```env```:
 
-В поле ***AUTO_POOL*** - Выберите режим работы ноды, ```yes``` - автоматический режим переборки пулов, ```no``` - ручной режим выбора пула.
-
 В поле ***POOL*** - Можете вручную установить пул, по умолчанию настроен Moonbeam.
 
 В поле ***MNEMONIС*** - вставляем мнемоник фразу от вашего кошелька KYVE.
 
 В поле ***STAKE*** - укажите желаемый объем стейка токенов KYVE.
 
-В поле ***MONIKER*** - вставляем имя ноды.
-
 В поле ***LINK_ARWEAVE_WALLET*** - прямую сылку на скачивание файла вашего кошелька Arweave, сохраненного на гугл диск как было описано выше.
-
-В поле ***LINK_KYVE_XXXXXX*** - указаны ссылки на версии нод, при необходимости их можно изменить.
 
 Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды KYVE рекомендуется ```1 CPU x 4 GB RAM x 1 GB SSD```.
 
@@ -172,13 +166,10 @@ If the site says that you are a bot, then try deleting the tweet and redoing the
 
 * Then open access to the file on google drive and copy its link, it will look like:
 
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
-
- you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```. 
- 
+***```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
+ you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.  
 Thus, you will get a link to a direct download of the file:
-
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
+```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```***
 
 Save is.
 
@@ -198,19 +189,13 @@ You must have more than 5 AKT on your Akash wallet (5 АКТ will be blocked for
 
 Let's take a look at what is there, so the section ```services``` docker node image is specified here, as well as a block with environment variables ```env```:
 
-In the column ***AUTO_POOL*** - Select node operation mode, ```yes``` - automatic pooling mode, ```no``` - manual pool selection mode.
-
 In the column ***POOL*** -You can manually set the pool, Moonbeam is set by default.
 
 In the column ***MNEMONIС*** - insert the mnemonic phrase from your KYVE wallet.
 
 In the column ***STAKE*** - specify the desired amount of stake of KYVE tokens.
 
-In the column ***MONIKER*** - insert node name.
-
 In the column ***LINK_ARWEAVE_WALLET*** -direct link to download your Arweave wallet file saved to google drive as described above.
-
-In the column ***LINK_KYVE_XXXXXXX*** - references to node versions are indicated, they can be changed if necessary.
 
 In the column ```resources``` we expose the rented capacity. recommended for KYVE node ```1 CPU x 4 GB RAM x 1 GB SSD```.
 
