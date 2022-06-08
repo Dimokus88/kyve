@@ -3,38 +3,28 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/clan:0.0.8
-
-    
+    image: dimokus88/kyveprotokol:0.3.0
     env:
-     - "my_root_password=" # пароль root для подключения по ssh
-     - "MONIKER=" # имя ноды (Если нетрудно, укажите в имени ноды Akash, например: DimokusAkash
-     - "MNEMONIC=" # seed фраза от кошелька
-     - "LINK_KEY=" # ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
-    
+     - "POOL=0" 
+     - "MNEMONIC="
+     - "STAKE="
+     - "LINK_ARWEAVE_WALLET=https://drive.google.com/uc?export=download&id=***"
      
     expose:
       - port: 80
         as: 80
         to:
           - global: true
-      - port: 22
-        as: 22
-        to:
-          - global: true
-        
 profiles:
   compute:
     app:
       resources:
         cpu:
-          units: 2.0
+          units: 1.0
         memory:
           size: 4Gi
         storage:
-          size: 70Gi
-        
-        
+          size: 1Gi
   placement:
     akash: 
       attributes:
@@ -45,9 +35,9 @@ profiles:
       pricing:
         app:
           denom: uakt
-          amount: 1000
+          amount: 10000
 deployment:
   app:
     akash:
       profile: app
-      count: 1 
+      count: 1 #max 2 count
