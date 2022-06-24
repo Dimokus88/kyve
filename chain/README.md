@@ -1,5 +1,5 @@
-# Kyve validator node on Akash Network
-# Нода валидатора сети Kyve, развертка в Akash Network.
+# Kyve Chain validator node on Akash Network
+# Нода валидатора сети Kyve Chain, развертка в Akash Network.
 <div align="center">
 
 ![pba](https://user-images.githubusercontent.com/23629420/163564929-166f6a01-a6e2-4412-a4e9-40e54c821f05.png)
