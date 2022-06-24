@@ -68,7 +68,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171269920-572ee8c5-5e9b-4b3f-b7a6-56f704200d7a.png)
+![image](https://user-images.githubusercontent.com/23629420/175608418-a89d03f8-4110-4e54-92d7-f4e2fb9ee843.png)
   
 </div>
 
@@ -76,7 +76,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171270286-4d33c89d-64c8-4807-b8a1-ca853163fd42.png)
+![image](https://user-images.githubusercontent.com/23629420/175609308-9661333c-4127-4b8a-a8d0-0e7e8c35a6a9.png)
   
 </div>
 
@@ -92,7 +92,7 @@ Thus, you will get a link to a direct download of the file:
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171263925-fb3abceb-3816-4c09-8470-c247d332a48e.png)
+![image](https://user-images.githubusercontent.com/23629420/175608898-dc9547bf-581e-4b5d-adeb-72a411a8f280.png)
  
 </div>
 
@@ -141,7 +141,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171263901-721229e6-96b0-4bd9-adbf-4f0edfed354a.png)
+![image](https://user-images.githubusercontent.com/23629420/175608916-95c2ba43-1cd7-4aaa-8b38-dcae57607c70.png)
  
 </div>
 
@@ -191,7 +191,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171269962-0010a5be-8e45-4dec-a7c9-156fcaedf1cc.png)
+![image](https://user-images.githubusercontent.com/23629420/175608514-f5daa246-8ca6-4b15-b947-f6053009b56a.png)
   
 </div>
 
@@ -199,7 +199,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171270347-472f6652-e624-4e9c-bd5f-2655c3f12a97.png)
+![image](https://user-images.githubusercontent.com/23629420/175609250-d38c5968-9294-4479-875a-0d4b5df9ffb7.png)
   
 </div>
 
@@ -215,7 +215,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171263863-67705657-e0aa-4fe1-9530-ac97007318ba.png)
+![image](https://user-images.githubusercontent.com/23629420/175608934-1c51ddcf-6c17-4fb3-adc0-e041f5d4a9cb.png)
  
 </div>
 
@@ -267,8 +267,7 @@ We are waiting for the completion of the deployment.
 
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/23629420/171263840-eace007a-3c06-41bf-894a-9514e3c70163.png)
-
+![image](https://user-images.githubusercontent.com/23629420/175608958-39aa8e2a-ee99-4bbd-9d05-461b6709742a.png)
  
 </div>
 
