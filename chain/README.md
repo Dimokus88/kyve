@@ -16,7 +16,7 @@ Before you start - subscribe to our news channels:
 </div>
 <div align="center">
   
-| [Discord Kyve](https://discord.gg/HqwfxVXk) | [Explorer Kyve](https://Kyve.explorers.guru/) | [Site Kyve](https://app.kyve.network/) | [Twitter Kyve](https://twitter.com/KYVENetwork/) |
+| [Discord Kyve](https://discord.gg/3AGvFFQQ) | [Explorer Kyve](https://Kyve.explorers.guru/) | [Site Kyve](https://app.kyve.network/) | [Twitter Kyve](https://twitter.com/KYVENetwork/) |
 |:--:|:--:|:--:|:--:|
   
 </div>
