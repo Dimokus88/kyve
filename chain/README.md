@@ -22,14 +22,14 @@ Before you start - subscribe to our news channels:
 </div>
 <div align="center">
   
-[English version](https://github.com/Dimokus88/Kyve#english-version) | [Русская версия](https://github.com/Dimokus88/Kyve#%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)
+[English version](https://github.com/Dimokus88/kyve/tree/main/chain#english-version) | [Русская версия](https://github.com/Dimokus88/kyve/tree/main/chain#%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)
   
-[Useful Commands | Полезные команды](https://github.com/Dimokus88/Kyve#useful-commands--%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B)
+[Useful Commands | Полезные команды](https://github.com/Dimokus88/kyve/tree/main/chain#useful-commands--%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B)
 </div>
 
 # English version
 
-> If you want to migrate your Kyve node to Akash, or if you have priv_validator_key.json, then go [to this step](https://github.com/Dimokus88/Kyve#if-you-have-priv_validator_keyjson).
+> If you want to migrate your Kyve node to Akash, or if you have priv_validator_key.json, then go [to this step](https://github.com/Dimokus88/kyve/tree/main/chain#if-you-have-priv_validator_keyjson).
 
 >You must have more than ***5 AKT*** on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community[Akash RU](https://t.me/akash_ru) we regularly hold events in which we distribute АКТ.
 
@@ -98,7 +98,7 @@ Thus, you will get a link to a direct download of the file:
 
 * In the ```LOGS``` tab , you can view the operation of the node. Synchronization will start from the block that is ***10000*** blocks "below" the last one. For example, if there are ***596562*** blocks in the network at the time the node is launched, then synchronization and "catching up" will start from 596562-10000= ***586562*** blocks.After full synchronization, a validator will be created (***if it has not been created earlier***) and the node will enter the automatic mode of operation.
 
-[Go to start](https://github.com/Dimokus88/Kyve#Kyve-validator-node-on-akash-network)
+[Go to start](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
 
 ### Thank you for choosing Akash Network!
 
@@ -145,13 +145,13 @@ We are waiting for the completion of the deployment.
  
 </div>
 
-[Go to start](https://github.com/Dimokus88/Kyve#Kyve-validator-node-on-akash-network)
+[Go to start](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
 
 ### Thank you for choosing Akash Network!
 
 # Русская версия
 
-> Если хотите перенести вашу ноду на Akash, или у вас есть priv_validator_key.json, то перейдите [к этому пункту](https://github.com/Dimokus88/Kyve#%D0%B5%D1%81%D0%BB%D0%B8-%D1%83-%D0%B2%D0%B0%D1%81-%D0%B5%D1%81%D1%82%D1%8C-priv_validator_keyjson).
+> Если хотите перенести вашу ноду на Akash, или у вас есть priv_validator_key.json, то перейдите [к этому пункту](https://github.com/Dimokus88/kyve/tree/main/chain#D0%B5%D1%81%D0%BB%D0%B8-%D1%83-%D0%B2%D0%B0%D1%81-%D0%B5%D1%81%D1%82%D1%8C-priv_validator_keyjson).
 
 > На вашем кошельке ```Akash``` (с которого будет разворачивать ***Kyve***) должно быть более ***5 АКТ*** (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах ```Gate```, ```AsendeX```, ```Osmosis``` . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
 
@@ -221,7 +221,7 @@ We are waiting for the completion of the deployment.
 
 * В поле ```LOGS``` можете наблюдать работу ноды. Синхронизация начнеся с блока который на ***10000*** блоков "ниже" последнего. Например, если в сети на момент запуска ноды ***596562*** блоков, то синхронизивароться и "догонять" начнет с 596562-10000= ***586562*** блока. После полной синхронизации будет создан валидатор (если он не был созда ранее) и нода войдет в автоматический режим работы. 
 
-[Перейти к началу](https://github.com/Dimokus88/Kyve#Kyve-validator-node-on-akash-network)
+[Перейти к началу](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
 
 ### Спасибо что используете Akash Network!
 
@@ -272,7 +272,7 @@ We are waiting for the completion of the deployment.
  
 </div>
 
-[Перейти к началу](https://github.com/Dimokus88/Kyve#Kyve-validator-node-on-akash-network)
+[Перейти к началу](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
 
 
 ### Спасибо что используете Akash Network!
