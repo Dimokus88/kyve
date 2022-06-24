@@ -1,0 +1,58 @@
+---
+version: "2.0"
+
+services:
+  app:
+    image: dimokus88/kyvechain:0.0.1
+
+    
+    env:
+     - "my_root_password=" # root password for ssh connection. пароль root для подключения по ssh. 
+     - "MONIKER=" # node name (If it is not difficult, specify Akash in the node name, for example: DimokusAkash). имя ноды (Если нетрудно, укажите в имени ноды Akash, например: DimokusAkash)
+     - "MNEMONIC=" # seed phrase from the Clan wallet. seed фраза от кошелька Clan.
+     - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets. ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
+     - "SNAP_RPC=http://3.68.232.117:26657"
+     - "gitrep=https://github.com/KYVENetwork/chain/releases/download/v0.4.0/chain_linux_amd64.tar.gz"
+     - "genesis=https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json"
+     - "addrbook=https://api.testnet.run/addrbook-korellia.json"
+     - "peers=70556c82352b9919fb6f339b9da0ebc587e9148c@3.68.232.117:26656"
+     - "seeds=e56574f922ff41c68b80700266dfc9e01ecae383@18.156.198.41:26656"
+     
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+      - port: 22
+        as: 22
+        to:
+          - global: true
+        
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 2.0
+        memory:
+          size: 4Gi
+        storage:
+          size: 70Gi
+        
+        
+  placement:
+    akash: 
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+            
+      pricing:
+        app:
+          denom: uakt
+          amount: 1000
+deployment:
+  app:
+    akash:
+      profile: app
+      count: 1 
