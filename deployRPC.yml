@@ -1,0 +1,76 @@
+---
+version: "2.0"
+
+services:
+  app:
+    image: ubuntu:latest
+    env:
+#1.Раздел часной информации, неделитесь даннмы из этого раздела!
+#1.Private information section, do not share data from this section!
+     - "my_root_password=" # пароль root для подключения по ssh
+     - "MONIKER=Akash" # node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash)
+#==================================================================
+#2.Раздел переменных для работы ноды
+#2.Section of variables for node operation 
+     - "validator_node=no"
+     - "autodelegate=no"
+     - "binary=kyved"
+     - "vers=v0.6.3"
+     - "genesis=https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json"
+     - "folder=.kyve"
+     - "denom=tkyve"
+     - "chain=korellia"
+     - "gitrep=https://github.com/KYVENetwork/chain/releases/download/v0.6.3/chain_linux_amd64.tar.gz"
+     - "gitfold=chain"
+     - "addrbook=https://snapshots.bitszn.com/snapshots/kyve/addrbook.json"
+     - "PEER=70556c82352b9919fb6f339b9da0ebc587e9148c@3.68.232.117:26656,051d5068b0408069722aadae95e5d2bb2a470191@154.12.235.154:36656,47be3788468cc6acdece629f0ffc8429e29d26c8@3.125.181.53:26670"
+     - "SHIFT=2000"
+     - "SNAP_RPC=http://3.68.232.117:26657"
+    command:
+      - "bash"
+      - "-c"
+    args:
+      - 'apt-get update ; apt-get upgrade -y ; apt-get install -y  curl ; curl -s  https://raw.githubusercontent.com/Dimokus88/universe/main/alphatest/main2.sh | bash ; sleep infinity'
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+      - port: 22
+        as: 22
+        to:
+          - global: true
+      - port: 26656
+        as: 26656
+        to:
+          - global: true
+      - port: 26657
+        as: 26657
+        to:
+          - global: true
+        
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 2.0
+        memory:
+          size: 4Gi
+        storage:
+          size: 40Gi
+        
+        
+  placement:
+    akash: 
+      attributes:
+            
+      pricing:
+        app:
+          denom: uakt
+          amount: 10000
+deployment:
+  app:
+    akash:
+      profile: app
+      count: 1 
