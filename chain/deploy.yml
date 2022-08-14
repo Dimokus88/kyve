@@ -15,7 +15,7 @@ services:
 #2.Раздел переменных для работы ноды
 #2.Section of variables for node operation 
      - "validator_node=yes"
-     - "autodelegate=yes"
+     - "autodelegate=no"
      - "binary=kyved"
      - "vers=v0.6.4"
      - "genesis=https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json"
@@ -24,11 +24,10 @@ services:
      - "chain=korellia"
      - "gitrep=https://github.com/KYVENetwork/chain/releases/download/v0.6.4/chain_linux_amd64.tar.gz"
      - "gitfold=chain"
-     #- "addrbook=https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/addrbook.json"
      - "link_rpc=https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/state_sync"
      - "link_peer=https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/PEER"
      - "SHIFT=2000"
-     - "SNAP_RPC=http://95.216.157.18:26657"
+     - "SNAP_RPC=http://3.72.38.121:26657"
     command:
       - "bash"
       - "-c"
@@ -77,4 +76,4 @@ deployment:
   app:
     akash:
       profile: app
-      count: 1
+      count: 1 
