@@ -8,7 +8,7 @@ services:
 #1.Раздел часной информации, неделитесь даннмы из этого раздела!
 #1.Private information section, do not share data from this section!
      - "my_root_password=" # пароль root для подключения по ssh
-     - "MONIKER=" # node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash)
+     - "MONIKER=Name_Akash" #Node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). Имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash).
      - "MNEMONIC=" # seed phrase from the  wallet. seed фраза от кошелька .
      - "LINK_KEY="  # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #==================================================================
