@@ -23,7 +23,7 @@ services:
       - "bash"
       - "-c"
     args:
-      - 'curl -s https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/kyvechain.sh | bash '
+      - 'curl -s https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/main.sh | bash '
     expose:
       - port: 80
         as: 80
