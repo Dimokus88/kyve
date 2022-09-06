@@ -181,8 +181,8 @@ RUN
 sleep 1m
 # -----------------------------------------------------------
 for ((;;))
-  do    
+do    
     tail -100 /var/log/$binary/current | grep -iv peer
     sleep 10m
-  done
-fi
+done
+
