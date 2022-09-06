@@ -3,36 +3,27 @@ version: "2.0"
 
 services:
   app:
-    image: ubuntu:latest
+    image: dimokus88/ubuntu:1.1
     env:
 #1.Раздел часной информации, неделитесь даннмы из этого раздела!
 #1.Private information section, do not share data from this section!
-     - "my_root_password=" # пароль root для подключения по ssh
-     - "MONIKER=Name_Akash" #Node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). Имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash).
-     - "MNEMONIC=" # seed phrase from the  wallet. seed фраза от кошелька .
-     - "LINK_KEY="  # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
-#==================================================================
+      - "my_root_password=111111" # Root password far a ssh connection. Пароль root для подключения по ssh.
+      - "MONIKER=Akash_Nodes_Lab" # Node name. Use "Akash" in moniker(for example: Dimokus_Akash) to help develop the project! Имя ноды. Используйте в моникере "Akash"(например: Dimokus_Akash) что бы помочь в развитии проекта!
+      - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #2.Раздел переменных для работы ноды
 #2.Section of variables for node operation 
-     - "validator_node=yes"
-     - "autodelegate=no"
-     - "binary=kyved"
-     - "vers=v0.6.4"
-     - "genesis=https://github.com/KYVENetwork/chain/releases/download/v0.0.1/genesis.json"
-     - "folder=.kyve"
-     - "denom=tkyve"
-     - "chain=korellia"
-     - "gitrep=https://github.com/KYVENetwork/chain/releases/download/v0.6.4/chain_linux_amd64.tar.gz"
-     - "gitfold=chain"
-     - "link_rpc=https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/state_sync"
-     - "link_peer=https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/PEER"
-     - "SHIFT=2000"
-     - "SNAP_RPC=http://3.72.38.121:26657"
+      - "binary=kyved"
+      - "genesis=https://nc2.breithecker.de/s/z3bDsQk8D6snyWA/download/genesis-v0.7.0-beta.json"
+      - "folder=.kyve"
+      - "denom=tkyve"
+      - "chain=kyve-beta"
+      - "gitrep=https://nc2.breithecker.de/s/BY4Lzj8TAQzgJZm/download/chain_linux_amd64.tar.gz"
+      - "PEER=410bf0cb2cdb9a6e159c14b9d01531b9ecb1edd4@3.70.26.46:26656"
     command:
       - "bash"
       - "-c"
     args:
-      - 'apt-get update ; apt-get upgrade -y ; apt-get install -y curl ; curl -s  https://raw.githubusercontent.com/Dimokus88/universe/main/alphatest/main2.sh | bash ; sleep infinity'
+      - 'curl -s https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/kyvechain.sh | bash '
     expose:
       - port: 80
         as: 80
@@ -50,24 +41,21 @@ services:
         as: 26657
         to:
           - global: true
-
+        
 profiles:
   compute:
     app:
       resources:
         cpu:
-          units: 3.0
+          units: 2.0
         memory:
           size: 4Gi
         storage:
-        - size: 90Gi
-
+          size: 100Gi
         
         
   placement:
     akash: 
-      attributes:
-            
       pricing:
         app:
           denom: uakt
