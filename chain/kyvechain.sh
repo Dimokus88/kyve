@@ -1,5 +1,6 @@
 #!/bin/bash
 # By Dimokus (https://t.me/Dimokus)
+
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 (echo ${my_root_password}; echo ${my_root_password}) | passwd root
 service ssh restart
@@ -11,7 +12,6 @@ echo 'export denom='${denom} >> $HOME/.bashrc
 echo 'export chain='${chain} >> $HOME/.bashrc
 source $HOME/.bashrc
 #======================================================== НАЧАЛО БЛОКА ФУНКЦИЙ ==================================================
-#-------------------------- Установка GO и кмопиляция бинарного файла -----------------------
 INSTALL (){
 #-----------КОМПИЛЯЦИЯ БИНАРНОГО ФАЙЛА------------
 cd /
