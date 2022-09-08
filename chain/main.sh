@@ -170,7 +170,7 @@ mkdir /root/$binary/log
 cat > /root/$binary/run <<EOF 
 #!/bin/bash
 exec 2>&1
-exec cosmovisor start
+exec $binary start
 EOF
 chmod +x /root/$binary/run
 LOG=/var/log/$binary
@@ -182,6 +182,24 @@ exec svlogd -tt $LOG
 EOF
 chmod +x /root/$binary/log/run
 ln -s /root/$binary /etc/service
+#==================
+mkdir /root/cosmovisor
+mkdir /root/cosmovisor/log
+cat > /root/cosmovisor/run <<EOF 
+#!/bin/bash
+exec 2>&1
+exec cosmovisor start
+EOF
+chmod +x /root/cosmovisor/run
+LOG=/var/log/cosmovisor
+
+cat > /root/cosmovisor/log/run <<EOF 
+#!/bin/bash
+mkdir $LOG
+exec svlogd -tt $LOG
+EOF
+chmod +x /root/cosmovisor/log/run
+ln -s /root/cosmovisor /etc/service
 }
 #--------------------------------------------------------------------------------------------
 #======================================================== КОНЕЦ БЛОКА ФУНКЦИЙ ====================================================
