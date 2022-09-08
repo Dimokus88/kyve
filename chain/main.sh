@@ -20,13 +20,7 @@ tar -xvzf chain_linux_amd64.tar.gz
 chmod +x chaind
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
 mv cosmovisor_linux_amd64 cosmovisor && \
-chmod +x cosmovisor
-mkdir -p ~/.kyve/cosmovisor/genesis/bin/ && \
-echo "{}" > ~/.kyve/cosmovisor/genesis/upgrade-info.json
-cp chaind ~/.kyve/cosmovisor/genesis/bin/chaind
-export DAEMON_HOME="$HOME/.kyve"
-export DAEMON_NAME="chaind"
-export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
+
 #-------------------------------------------------
 
 
@@ -40,6 +34,13 @@ sleep 5
 $binary config chain-id $chain
 
 $binary config keyring-backend os
+chmod +x cosmovisor
+mkdir -p ~/$folder/cosmovisor/genesis/bin/ && \
+echo "{}" > ~/$folder/cosmovisor/genesis/upgrade-info.json
+cp chaind ~/$folder/cosmovisor/genesis/bin/$binary
+export DAEMON_HOME="root/$folder"
+export DAEMON_NAME="$binary"
+export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
 #====================================================
 
 #===========ДОБАВЛЕНИЕ GENESIS.JSON===============
