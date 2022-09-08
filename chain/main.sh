@@ -8,7 +8,12 @@ runsvdir -P /etc/service &
 echo 'export MONIKER='${MONIKER} >> $HOME/.bashrc
 echo 'export binary='${binary} >> $HOME/.bashrc
 echo 'export denom='${denom} >> $HOME/.bashrc
-echo 'export chain='${chain} >> $HOME/.bashrc
+ 'export chain='${chain} >> $HOME/.bashrc
+
+echo 'export DAEMON_HOME='/root/$folder >> $HOME/.bashrc
+echo 'export DAEMON_NAME='$binary >> $HOME/.bashrc
+echo 'export DAEMON_ALLOW_DOWNLOAD_BINARIES='true >> $HOME/.bashrc
+
 source $HOME/.bashrc
 #======================================================== НАЧАЛО БЛОКА ФУНКЦИЙ ==================================================
 #-------------------------- Установка GO и кмопиляция бинарного файла -----------------------
@@ -39,9 +44,6 @@ chmod +x /usr/bin/cosmovisor
 mkdir -p /root/$folder/cosmovisor/genesis/bin/ && \
 echo "{}" > /root/$folder/cosmovisor/genesis/upgrade-info.json
 cp /usr/bin/$binary /root/$folder/cosmovisor/genesis/bin/$binary
-export DAEMON_HOME=/root/$folder
-export DAEMON_NAME=$binary
-export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
 #====================================================
 
 #===========ДОБАВЛЕНИЕ GENESIS.JSON===============
@@ -164,25 +166,6 @@ RUN (){
 #===========ЗАПУСК НОДЫ============
 echo =Run node...=
 cd /
-mkdir /root/$binary
-mkdir /root/$binary/log
-    
-cat > /root/$binary/run <<EOF 
-#!/bin/bash
-exec 2>&1
-exec $binary start
-EOF
-chmod +x /root/$binary/run
-LOG=/var/log/$binary
-
-cat > /root/$binary/log/run <<EOF 
-#!/bin/bash
-mkdir $LOG
-exec svlogd -tt $LOG
-EOF
-chmod +x /root/$binary/log/run
-ln -s /root/$binary /etc/service
-#==================
 mkdir /root/cosmovisor
 mkdir /root/cosmovisor/log
 cat > /root/cosmovisor/run <<EOF 
