@@ -20,7 +20,7 @@ tar -xvzf chain_linux_amd64.tar.gz
 chmod +x $binary
 cp $binary /usr/bin/
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
-mv cosmovisor_linux_amd64 cosmovisor && \
+mv cosmovisor_linux_amd64 /usr/bin/cosmovisor 
 
 #-------------------------------------------------
 
@@ -35,7 +35,7 @@ sleep 5
 $binary config chain-id $chain
 
 $binary config keyring-backend os
-chmod +x cosmovisor
+chmod +x /usr/bin/cosmovisor
 mkdir -p ~/$folder/cosmovisor/genesis/bin/ && \
 echo "{}" > ~/$folder/cosmovisor/genesis/upgrade-info.json
 cp chaind ~/$folder/cosmovisor/genesis/bin/$binary
