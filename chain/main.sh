@@ -8,7 +8,7 @@ runsvdir -P /etc/service &
 echo 'export MONIKER='${MONIKER} >> $HOME/.bashrc
 echo 'export binary='${binary} >> $HOME/.bashrc
 echo 'export denom='${denom} >> $HOME/.bashrc
- 'export chain='${chain} >> $HOME/.bashrc
+echo 'export chain='${chain} >> $HOME/.bashrc
 source $HOME/.bashrc
 #======================================================== НАЧАЛО БЛОКА ФУНКЦИЙ ==================================================
 #-------------------------- Установка GO и кмопиляция бинарного файла -----------------------
