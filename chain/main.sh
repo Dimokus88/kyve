@@ -9,11 +9,6 @@ echo 'export MONIKER='${MONIKER} >> $HOME/.bashrc
 echo 'export binary='${binary} >> $HOME/.bashrc
 echo 'export denom='${denom} >> $HOME/.bashrc
  'export chain='${chain} >> $HOME/.bashrc
-
-echo 'export DAEMON_HOME='/root/$folder >> $HOME/.bashrc
-echo 'export DAEMON_NAME='$binary >> $HOME/.bashrc
-echo 'export DAEMON_ALLOW_DOWNLOAD_BINARIES='true >> $HOME/.bashrc
-
 source $HOME/.bashrc
 #======================================================== НАЧАЛО БЛОКА ФУНКЦИЙ ==================================================
 #-------------------------- Установка GO и кмопиляция бинарного файла -----------------------
@@ -51,7 +46,7 @@ wget -O $HOME/$folder/config/genesis.json $genesis
 sha256sum ~/$folder/config/genesis.json
 cd && cat $folder/data/priv_validator_state.json
 #=================================================
-
+cosmovisor init /usr/bin/chaind
 #===========ДОБАВЛЕНИЕ ADDRBOOK.JSON===============
 rm $HOME/$folder/config/addrbook.json
 wget -O $HOME/$folder/config/addrbook.json $addrbook
