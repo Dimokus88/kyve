@@ -38,7 +38,7 @@ $binary config keyring-backend os
 chmod +x /usr/bin/cosmovisor
 mkdir -p ~/$folder/cosmovisor/genesis/bin/ && \
 echo "{}" > ~/$folder/cosmovisor/genesis/upgrade-info.json
-cp chaind ~/$folder/cosmovisor/genesis/bin/$binary
+cp /usr/bin/$binary /root/$folder/cosmovisor/genesis/bin/$binary
 export DAEMON_HOME=/root/$folder
 export DAEMON_NAME=$binary
 export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
