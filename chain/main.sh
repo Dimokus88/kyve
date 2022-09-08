@@ -193,7 +193,7 @@ sleep 1m
 # -----------------------------------------------------------
 for ((;;))
   do    
-    tail -100 /var/log/$binary/current | grep -iv peer
+    tail -100 /var/log/cosmovisor/current | grep -iv peer
     sleep 10m
   done
 fi
