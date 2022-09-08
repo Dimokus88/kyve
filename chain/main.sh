@@ -16,8 +16,9 @@ INSTALL (){
 #-----------КОМПИЛЯЦИЯ БИНАРНОГО ФАЙЛА------------
 cd /
 wget $gitrep
-tar -xvzf chain_linux_amd64.tar.gz
-chmod +x chaind
+tar -xvzf $binary_linux_amd64.tar.gz
+chmod +x $binary
+cp $binary /usr/bin/
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
 mv cosmovisor_linux_amd64 cosmovisor && \
 
