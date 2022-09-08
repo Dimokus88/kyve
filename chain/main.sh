@@ -39,9 +39,9 @@ chmod +x /usr/bin/cosmovisor
 mkdir -p ~/$folder/cosmovisor/genesis/bin/ && \
 echo "{}" > ~/$folder/cosmovisor/genesis/upgrade-info.json
 cp chaind ~/$folder/cosmovisor/genesis/bin/$binary
-export DAEMON_HOME="root/$folder"
-export DAEMON_NAME="$binary"
-export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
+export DAEMON_HOME=/root/$folder
+export DAEMON_NAME=$binary
+export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
 #====================================================
 
 #===========ДОБАВЛЕНИЕ GENESIS.JSON===============
