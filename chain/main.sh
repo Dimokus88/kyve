@@ -166,6 +166,9 @@ mkdir /root/cosmovisor/log
 cat > /root/cosmovisor/run <<EOF 
 #!/bin/bash
 exec 2>&1
+export DAEMON_HOME=/root/.kyve/
+export DAEMON_NAME=chaind
+export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
 exec cosmovisor start
 EOF
 chmod +x /root/cosmovisor/run
