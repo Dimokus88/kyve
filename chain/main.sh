@@ -18,11 +18,19 @@ cd /
 wget $gitrep
 tar -xvzf chain_linux_amd64.tar.gz
 chmod +x chaind
-ls
-mv ./chaind /usr/local/bin/$binary
-cd /
-$binary version
+wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
+mv cosmovisor_linux_amd64 cosmovisor && \
+chmod +x cosmovisor
+mkdir -p ~/.kyve/cosmovisor/genesis/bin/ && \
+echo "{}" > ~/.kyve/cosmovisor/genesis/upgrade-info.json
+cp chaind ~/.kyve/cosmovisor/genesis/bin/chaind
+export DAEMON_HOME="$HOME/.kyve"
+export DAEMON_NAME="chaind"
+export DAEMON_ALLOW_DOWNLOAD_BINARIES="true"
 #-------------------------------------------------
+
+
+
 
 #=======ИНИЦИАЛИЗАЦИЯ БИНАРНОГО ФАЙЛА================
 echo =INIT=
@@ -160,7 +168,7 @@ mkdir /root/$binary/log
 cat > /root/$binary/run <<EOF 
 #!/bin/bash
 exec 2>&1
-exec $binary start
+exec cosmovisor start
 EOF
 chmod +x /root/$binary/run
 LOG=/var/log/$binary
