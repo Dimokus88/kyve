@@ -67,7 +67,7 @@ curl -s localhost:26657/status | jq .result.sync_info.catching_up
 If the node is **synchronized** - run:
 
 ```
-source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
 ```
 
 Follow the script execution prompts.
@@ -78,7 +78,7 @@ When the validator is created, request the remaining balance:
 $binary q bank balances $address
 ```
 
-You can delegate the remaining tokens to yourself, but leave 1,000,000 uacre to pay for transaction gas:
+You can delegate the remaining tokens to yourself, but leave 1 000 000 000 tkyve to pay for transaction gas:
 
 ```
 $binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
@@ -132,7 +132,7 @@ curl -s localhost:26657/status | jq .result.sync_info.catching_up
 Если нода **синхронизированна** - выполните:
 
 ```
-source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/kyve/main/chain/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
 ```
 
 Следуйте подсказкам выполнения скрипта.
@@ -143,7 +143,7 @@ source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimo
 $binary q bank balances $address
 ```
 
-Можете делегировать на себя оставшиеся токены, но оставьте 1 000 000 uacre для оплаты газа транзакций:
+Можете делегировать на себя оставшиеся токены, но оставьте 1 000 000 000 tkyve для оплаты газа транзакций:
 
 ```
 $binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
