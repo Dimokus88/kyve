@@ -5,6 +5,7 @@ cd node
 
 yarn install
 yarn setup
+wget -O /root/arweave.json $LINK_ARWEAVE_WALLET
 echo ========================================
 echo ="ВНИМАНИЕ! Выбрана РУЧНАЯ смена пула!"=
 echo ========================================
