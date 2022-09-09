@@ -5,7 +5,7 @@ echo ========================================
 starting (){
 	sudo chmod a+x /usr/bin/kyve
 	sleep 2
-	kyve wallets add "wallet" /root/arweave.json
+	kyve wallets add "wallet" "$(cat /root/arweave.json)"
 	kyve valaccounts create "valaccount"
 	kyve start --pool ${POOL} --account valaccount --wallet wallet --network beta --verbose	
 	echo =================================================================================================
