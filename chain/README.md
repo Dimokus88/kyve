@@ -25,258 +25,138 @@ Before you start - subscribe to our news channels:
 </div>
 <div align="center">
   
-[English version](https://github.com/Dimokus88/kyve/tree/main/chain#english-version) | [Русская версия](https://github.com/Dimokus88/kyve/tree/main/chain#%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)
-  
-[Useful Commands | Полезные команды](https://github.com/Dimokus88/kyve/tree/main/chain#useful-commands--%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B)
+[English version](https://github.com/Dimokus88/Kyve/tree/main#english-version) | [Русская версия](https://github.com/Dimokus88/Kyve/tree/main#%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F) 
+ 
 </div>
+
+___
 
 # English version
+### Deployment of the Kyve node.
 
-> If you want to migrate your Kyve node to Akash, or if you have priv_validator_key.json, then go [to this step](https://github.com/Dimokus88/kyve/tree/main/chain#if-you-have-priv_validator_keyjson).
+Deploy [deploy.yml](https://github.com/Dimokus88/kyve/blob/main/chain/deploy.yml) **Kyve** nodes with **Cloudmos (Akashlytics)** ( [use instructions here](https://github.com/Dimokus88/guides/blob/main/Akashlytics/EN-guide.md) ) by setting the values ​​in the corresponding `deploy.yml` variables:
+- **my_root_password** - your password for the `root` user.
+- **MONIKER**-node name.
+- **LINK_KEY**-link to direct download of `priv_validator_key.json`* file.
 
->You must have more than ***5 AKT*** on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community[Akash RU](https://t.me/akash_ru) we regularly hold events in which we distribute АКТ.
+If you don't have a `priv_validator_key.json` or want to know how to get a direct download link, refer to [this guide](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/valkey/README_EN.md).
 
-## If starting for the first time:
+> *If you want to deploy an **RPC** node without a validator key, leave `LINK_KEY` blank or remove this line altogether. The node will run on the generated `priv_validator_key.json`.
 
-***Create an additional Cosmos ecosystem wallet for the Kyve project using Keplr or Cosmostation. Rewrite the seed phrase from the created wallet, we will need it when deploying.***
-
-* Open ***Akashlytics***,if you don't have it installed, then [link for download](https://www.akashlytics.com/deploy).
-
-* We check the presence of a balance  ***(>5АКТ)*** and the presence of an installed certificate.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Click ***CREATE DEPLOYMENT***. Select ***Empty*** and copy the contents there [deploy.yml](https://github.com/Dimokus88/kyve/blob/main/chain/deploy.yml)
-
-* Let's take a look at what is there, so the ```services``` section indicates the ```docker``` node image, as well as a block with environment variables ```env```:
-
-* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
-* ```MONIKER```       - Node name .
-* ```MNEMONIС```      -  insert the mnemonic phrase from your wallet ***Kyve***.
-
-> ```LINK_KEY``` -  comment out the env to the priv_validator_key.json. 
-
-In the ```resources``` field, we set the capacity to be rented. ```4 CPU x 8 GB RAM x 100 GB SSD``` recommended for ***Kyve*** node. 
-
-* Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-
-* We choose the one that suits us in terms of price and equipment. Then we press ```ACCEPT BID```.
-
-We are waiting for the completion of the deployment.
-
-* In the ```LOGS``` tab, wait for a message about the generated file ```priv_validator_key.json``` .
+At this stage, the node is deployed. Navigating to the forwarded port **26657** in the `LEASES` tab, the `websocket` of the node will open, where its up-to-date information will be available. If you need to **create** a validator on your `priv_validator_key.json` go to the next step.
 
 <div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/175608418-a89d03f8-4110-4e54-92d7-f4e2fb9ee843.png)
-  
+
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032797-70a74454-75dd-4910-8a30-9a88a1715531.png" width=45% align="left"</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032818-069eef95-8242-459f-b503-ad8322261482.png" width=45% </p>
+
 </div>
 
-* In the ```SHELL``` tab, run the command```cat /root/.kyve/config/priv_validator_key.json```, save the answer in a file```priv_validator_key``` with extension```.json```.
+### Creating an Kyve validator
 
-<div align="center">
+Connect to the running node via **SSH** using forwarded port **22**, user **root** and the password you set in **deploy.yml**:
   
-![image](https://user-images.githubusercontent.com/23629420/175609308-9661333c-4127-4b8a-a8d0-0e7e8c35a6a9.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032966-3fa2ffae-5348-4a2c-a4e8-5d33c57ba320.png" width=60% </p>
+
+Check sync status, if `false` means the node is **synced**:
   
-</div>
+```
+curl -s localhost:26657/status | jq .result.sync_info.catching_up
+```
 
-> Then open access to the file on google drive and copy its link, it will look like:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.  
-Thus, you will get a link to a direct download of the file:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
+If the node is **synchronized** - run:
 
-* Go to the ```UPDATE``` tab, uncomment the ***LINK_KEY*** line (remove the # symbol) and paste the link to directly download your ```priv_validator_key.json``` file. Then click ```UPDATE DEPLOYMENT```. Confirm the transaction.
+```
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+```
 
-*In the process of work, your address ***Kyve*** will be displayed, you need to request tokens to it in [faucet](https://app.kyve.network/#/faucet).
+Follow the script execution prompts.
 
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/175608898-dc9547bf-581e-4b5d-adeb-72a411a8f280.png)
- 
-</div>
+When the validator is created, request the remaining balance:
 
-* In the ```LOGS``` tab , you can view the operation of the node. Synchronization will start from the block that is ***10000*** blocks "below" the last one. For example, if there are ***596562*** blocks in the network at the time the node is launched, then synchronization and "catching up" will start from 596562-10000= ***586562*** blocks.After full synchronization, a validator will be created (***if it has not been created earlier***) and the node will enter the automatic mode of operation.
+```
+$binary q bank balances $address
+```
 
-[Go to start](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
+You can delegate the remaining tokens to yourself, but leave 1,000,000 uacre to pay for transaction gas:
 
-### Thank you for choosing Akash Network!
+```
+$binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
+```
 
-## If you have priv_validator_key.json
+Collect rewards:
 
-> Then open access to the file on google drive and copy its link, it will look like:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- you need to take a part: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.  
-Thus, you will get a link to a direct download of the file:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
+```
+$binary tx distribution withdraw-rewards $valoper --from $address --fees 500$denom --commission --chain-id $chain -y
+```
+Other commands for managing a node [can be found here](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
 
-* Open ***Akashlytics***,if you don't have it installed, then [link for download](https://www.akashlytics.com/deploy).
+[Back to top](https://github.com/Dimokus88/Kyve/blob/main/README.md#Kyve-validator-node-on-akash-network)
 
-* We check the presence of a balance  ***(>5АКТ)*** and the presence of an installed certificate.
+**Thank you for using Akash Network!**
 
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Click ***CREATE DEPLOYMENT***. Select ***Empty*** and copy the contents there [deploy.yml](https://github.com/Dimokus88/kyve/blob/main/chain/deploy.yml)
-
-* Let's take a look at what is there, so the ```services``` section indicates the ```docker``` node image, as well as a block with environment variables ```env```:
-
-* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
-* ```MONIKER```       - Node name .
-* ```MNEMONIС```      -  insert the mnemonic phrase from your wallet ***Kyve***.
-* ```LINK_KEY``` -  paste the link to the hosted priv_validator_key.json (direct download).
-
-In the ```resources``` field, we set the capacity to be rented. ```4 CPU x 8 GB RAM x 100 GB SSD``` recommended for ***Kyve*** node. 
-
-* Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* We choose the one that suits us in terms of price and equipment. Then we press ```ACCEPT BID```.
-
-We are waiting for the completion of the deployment.
-
-* In the ```LOGS```  tab , you can view the operation of the node. Synchronization will start from the block that is ***10000*** blocks "below" the last one. For example, if there are ***596562*** blocks in the network at the time the node is launched, then synchronization and "catching up" will start from 596562-2000= ***586562*** blocks. After full synchronization, a validator will be created (***if it has not been created earlier***) and the node will enter the automatic mode of operation. 
-
-* In the process of work, your address ***Kyve*** will be displayed, you need to request tokens to it in [faucet](https://app.kyve.network/#/faucet).
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/175608916-95c2ba43-1cd7-4aaa-8b38-dcae57607c70.png)
- 
-</div>
-
-[Go to start](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
-
-### Thank you for choosing Akash Network!
-
+___
 # Русская версия
+### Развертка ноды Kyve.
 
-> Если хотите перенести вашу ноду на Akash, или у вас есть priv_validator_key.json, то перейдите [к этому пункту](https://github.com/Dimokus88/kyve/tree/main/chain#D0%B5%D1%81%D0%BB%D0%B8-%D1%83-%D0%B2%D0%B0%D1%81-%D0%B5%D1%81%D1%82%D1%8C-priv_validator_keyjson).
+Разверните [deploy.yml](https://github.com/Dimokus88/kyve/blob/main/chain/deploy.yml) ноды **Kyve** с помощью **Cloudmos (Akashlytics)**  ([инструкция по использованию здесь](https://github.com/Dimokus88/guides/blob/main/Akashlytics/RU-guide.md)) установив значения в соответствующих переменных  `deploy.yml`: 
+- **my_root_password**-свой пароль для `root` пользователя
+- **MONIKER**-имя ноды  
+- **LINK_KEY**-ссылку на прямое скачивание файла `priv_validator_key.json`* 
 
-> На вашем кошельке ```Akash``` (с которого будет разворачивать ***Kyve***) должно быть более ***5 АКТ*** (5 АКТ будут заблокированы на развертывание + оплата газа транзакций). АКТ можно пробрести на биржах ```Gate```, ```AsendeX```, ```Osmosis``` . Так же в нашем сообществе [Akash RU](https://t.me/akash_ru) мы регулярно проводим эвенты в которых раздаем АКТ.
+Если у вас нет `priv_validator_key.json` или вы хотите знать, как получить ссылку на прямое скачивание - обратитесь [к этой инструкции](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/valkey/README_RU.md). 
 
-## Если запуск производится впервые:
+> *Если вы хотите развернуть **RPC** ноду без ключа валидатора - оставьте `LINK_KEY` пустым или вовсе удалите эту строку. Нода запустится на сгенерированном `priv_validator_key.json`. 
 
-***Создайте дополнительный кошелек экосистемы Cosmos для проекта Kyve, с помощью Keplr или Cosmostation. Перепишите seed фразу от созданного кошелька, она понадобится нам при развертке.***
-
-* Открываем ```Akashlytics```, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
-
-* Проверяем наличие баланса (>5АКТ) и наличие установленного сертификата.
-
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
-
-* Нажимаем ```CREATE DEPLOYMENT```. Выбираем ```Empty```(пустой template) и копируем туда содержимое [deploy.yml](https://github.com/Dimokus88/kyve/blob/main/chain/deploy.yml) .
-
-Раберем что там есть, итак раздел ```services``` здесь указывается ```docker``` образ ноды, а также блок с переменными окружения ```env```:
-
-В поле ***my_root_password*** - задаем пароль root для подключения по ssh.
-
-В поле ***MONIKER*** - задаем имя ноды.
-
-В поле ***MNEMONIС*** - вставляем мнемоник фразу от вашего кошелька ***Kyve***.
-
-> Поле ***LINK_KEY*** -  оставьте закомментированным ссылка на размещенный priv_validator_key.json (прямое скачивание).
-
-Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды ***Kyve*** рекомендуется ```4 CPU x 8 GB RAM x 100 GB SSD```.  
-
-Нажимаем кнопку ```CREATE DEPLOYMENT``` и ждем появления провайдеров, со свободными мощностями (***BIDS***).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* Выбираем подходящий для нас по цене и оборудованию. После чего нажимаем ```ACCEPT BID```.
-
-Ждем заверщения развертывания.
-
-* Во вкладке ```LOGS``` дождитесь сообщения о сгенерированном файле ```priv_validator_key.json``` .
+На данном этапе нода развернута . Перейдя на переадресованный порт **26657** во вкладке `LEASES` откроется `websocket` ноды, где будет доступна ее актуальная информация. Если вам нужно **создать** валидатора на вашем `priv_validator_key.json` перейдите к следующему пункту.
 
 <div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/175608514-f5daa246-8ca6-4b15-b947-f6053009b56a.png)
-  
+
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032797-70a74454-75dd-4910-8a30-9a88a1715531.png" width=45% align="left"</p>
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032818-069eef95-8242-459f-b503-ad8322261482.png" width=45% </p>
+
 </div>
 
-* Во вкладке ```SHELL``` выполните команду ```cat /root/.kyve/config/priv_validator_key.json```, ответ сохраните в файле ```priv_validator_key``` с расширением ```.json```.
+### Создание валидатора Kyve
 
-<div align="center">
+Подключитесь к работающей ноде по протоколу **SSH**, используя переадресованный **22** порт, пользователь **root** и пароль заданный вами в **deploy.yml**:
   
-![image](https://user-images.githubusercontent.com/23629420/175609250-d38c5968-9294-4479-875a-0d4b5df9ffb7.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/23629420/182032966-3fa2ffae-5348-4a2c-a4e8-5d33c57ba320.png" width=60% </p>
   
-</div>
-
-> Откройте доступ к файлу на ```google``` диск и скопируйте его ссылку, она будет вида:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs``
- вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```.  
-Таким образом, у вас получится ссылка на прямое скачивание файла:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` . Сохраните ее.
-
-* Перейдите во вкладку ```UPDATE```, расскаментируйте строку  ***LINK_KEY*** (удалив символ #) и вставьте ссылку на прямое скачивание вашего файла ```priv_validator_key.json```. После чего нажмите ```UPDATE DEPLOYMENT```. Подтвердите транзакцию.
-
-* В процессе работы будет выводится ваш адрес ***Kyve***, на него нужно запросить токены в [кране](https://app.kyve.network/#/faucet).
-
-<div align="center">
+Проверьте статус синхронизации, если `false` значит нода **синхронизированна**:
   
-![image](https://user-images.githubusercontent.com/23629420/175608934-1c51ddcf-6c17-4fb3-adc0-e041f5d4a9cb.png)
- 
-</div>
+```
+curl -s localhost:26657/status | jq .result.sync_info.catching_up
+```
 
-* В поле ```LOGS``` можете наблюдать работу ноды. Синхронизация начнеся с блока который на ***10000*** блоков "ниже" последнего. Например, если в сети на момент запуска ноды ***596562*** блоков, то синхронизивароться и "догонять" начнет с 596562-10000= ***586562*** блока. После полной синхронизации будет создан валидатор (если он не был созда ранее) и нода войдет в автоматический режим работы. 
+Если нода **синхронизированна** - выполните:
 
-[Перейти к началу](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
+```
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+```
 
-### Спасибо что используете Akash Network!
+Следуйте подсказкам выполнения скрипта.
 
-## Если у вас есть priv_validator_key.json
+Когда валидатор будет создан запросите оставшийся баланс:
 
-> Откройте доступ к файлу на google диск и скопируйте его ссылку, она будет вида:
-```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
- вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```.  
-Таким образом, у вас получится ссылка на прямое скачивание файла:
-```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` . Сохраните ее.
+```
+$binary q bank balances $address
+```
 
-* Открываем ```Akashlytics```, если он у вас не установлен - то вот [ссылка на скачивание](https://www.akashlytics.com/deploy).
+Можете делегировать на себя оставшиеся токены, но оставьте 1 000 000 uacre для оплаты газа транзакций:
 
-* Проверяем наличие баланса (>5АКТ) и наличие установленного сертификата.
+```
+$binary tx staking delegate $valoper <amount>$denom --from $address --chain-id $chain --fees 555$denom -y
+```
 
-![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
+* Собрать награды:
 
-* Нажимаем ```CREATE DEPLOYMENT```. Выбираем ```Empty```(пустой template) и копируем туда содержимое [deploy.yml](https://github.com/Dimokus88/Kyve/blob/main/deploy.yml) .
+```
+$binary tx distribution withdraw-rewards $valoper --from $address --fees 500$denom --commission --chain-id $chain -y
+```
+Другие команды по управлению нодой [можете найти здесь](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
 
-Давайте раберем что там есть, итак раздел ```services``` здесь указывается ```docker``` образ ноды, а также блок с переменными окружения ```env```:
+[К началу](https://github.com/Dimokus88/Kyve/blob/main/README.md#Kyve-validator-node-on-akash-network)
 
-В поле ***my_root_password*** - задаем пароль root для подключения по ssh.
-
-В поле ***MONIKER*** - указываем имя ноды.
-
-В поле ***MNEMONIС*** - вставляем мнемоник фразу от вашего кошелька ***Kyve***.
-
-В поле ***LINK_KEY*** -  скопируйте ссылку на размещенный priv_validator_key.json (прямое скачивание). 
-
-Ниже, в поле ```resources``` мы выставляем арендуемую мощность. для ноды ***Kyve*** рекомендуется ```4 CPU x 8 GB RAM x 100 GB SSD```.
-
-Нажимаем кнопку ```CREATE DEPLOYMENT``` и ждем появления провайдеров, со свободными мощностями (***BIDS***).
-
-![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
-
-* Выбираем подходящий для нас по цене и оборудованию. После чего нажимаем ```ACCEPT BID```.
-
-Ждем заверщения развертывания.
-
-* В вкладке ```LOGS``` можете наблюдать работу ноды. Синхронизация начнеся с блока который на ***10000*** блоков "ниже" последнего, например если в сети на момент запуска ноды ***596562*** блоков, то синхронизивароться и "догонять" начнет с 596562-10000= ***586562*** блока. После чего будет создан валидатор (если он не был созда ранее) и нода войдет в автоматический режим работы.
-
-* В процессе работы будет выводится ваш адрес ***Kyve***, на него нужно запросить токены в [кране](https://app.kyve.network/#/faucet). 
-
-<div align="center">
-  
-![image](https://user-images.githubusercontent.com/23629420/175608958-39aa8e2a-ee99-4bbd-9d05-461b6709742a.png)
- 
-</div>
-
-[Перейти к началу](https://github.com/Dimokus88/kyve/tree/main/chain#Kyve-validator-node-on-akash-network)
-
-
-### Спасибо что используете Akash Network!
-
+**Спасибо что воспользовались Akash Network!**
 ___
