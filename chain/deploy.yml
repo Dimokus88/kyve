@@ -12,7 +12,7 @@ services:
       - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #2.Раздел переменных для работы ноды
 #2.Section of variables for node operation 
-      - "binary=kyved"
+      - "binary=chaind"
       - "genesis=https://nc2.breithecker.de/s/z3bDsQk8D6snyWA/download/genesis-v0.7.0-beta.json"
       - "folder=.kyve"
       - "denom=tkyve"
