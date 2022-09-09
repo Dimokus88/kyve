@@ -7,8 +7,8 @@ services:
     env:
 #1.Раздел часной информации, неделитесь даннмы из этого раздела!
 #1.Private information section, do not share data from this section!
-      - "my_root_password=" # Root password far a ssh connection. Пароль root для подключения по ssh.
-      - "MONIKER=" # Node name. Use "Akash" in moniker(for example:Dimokus_Akash) to help develop the project! Имя ноды. Используйте в моникере "Akash"(например:Dimokus_Akash) что бы помочь в развитии проекта!
+      - "my_root_password=123456" # Root password far a ssh connection. Пароль root для подключения по ssh.
+      - "MONIKER=MY_NODE_NAME" # Node name. Use "Akash" in moniker(for example:Dimokus_Akash) to help develop the project! Имя ноды. Используйте в моникере "Akash"(например:Dimokus_Akash) что бы помочь в развитии проекта!
       - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets.Ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #2.Раздел переменных для работы ноды
 #2.Section of variables for node operation 
