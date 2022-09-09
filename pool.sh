@@ -1,4 +1,10 @@
 #!/bin/bash
+apt-get install -y yarn
+git clone git@github.com:KYVENetwork/node.git
+cd node
+
+yarn install
+yarn setup
 echo ========================================
 echo ="ВНИМАНИЕ! Выбрана РУЧНАЯ смена пула!"=
 echo ========================================
