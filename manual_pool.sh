@@ -24,10 +24,8 @@ then
 	echo ="ВНИМАНИЕ! Выбран пул 0 (Moonbeam)"=
 	echo =====================================
 	cd $HOME  
-	wget -O kyve.zip ${LINK_KYVE_VERSION}  
-	unzip kyve.zip 
-	rm kyve.zip  
-	mv kyve-evm-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_VERSION}
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -36,10 +34,8 @@ then
 	echo =================================================
 	echo ="ВНИМАНИЕ! Выбран пул 1 (Avalanche // C-Chain)"=
 	echo =================================================
-	wget -O kyve.zip ${LINK_KYVE_VERSION}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	mv kyve-evm-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_VERSION}  
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 
@@ -48,10 +44,8 @@ then
 	echo ====================================
 	echo ="ВНИМАНИЕ! Выбран пул 3 (Bitcoin)"=
 	echo ====================================
-	wget -O kyve.zip ${LINK_KYVE_Bitcoin}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	sudo mv bitcoin-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Bitcoin} 
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -61,10 +55,8 @@ then
 	echo =================================
 	echo ="ВНИМАНИЕ! Выбран пул 4 (Solana)"=
 	echo =================================
-	wget -O kyve.zip ${LINK_KYVE_Solana}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	sudo mv kyve-solana-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Solana} 
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 if [[ $POOL == 5 ]]
@@ -72,10 +64,8 @@ then
 	echo ==================================
 	echo ="ВНИМАНИЕ! Выбран пул 5 (Zilliqa)"=
 	echo ==================================
-	wget -O kyve.zip ${LINK_KYVE_Zilliqa}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	sudo mv kyve-zilliqa-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Zilliqa}  
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 if [[ $POOL == 6 ]]
@@ -83,10 +73,8 @@ then
 	echo ===============================================
 	echo ="ВНИМАНИЕ! Выбран пул 6 (Near)"=
 	echo ===============================================
-	wget -O kyve.zip ${LINK_KYVE_Near}  
-	unzip kyve.zip  
-	rm kyve.zip 
-	sudo mv kyve-near-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Near} 
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 if [[ $POOL == 7 ]]
@@ -94,10 +82,8 @@ then
 	echo ===============================================
 	echo ="ВНИМАНИЕ! Выбран пул 7 (Celo)"=
 	echo ===============================================
-	wget -O kyve.zip ${LINK_KYVE_Celo}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	sudo mv kyve-celo-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Celo} 
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 if [[ $POOL == 8 ]]
@@ -105,10 +91,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 8 (Evmos EVM)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_VERSION}  
-	unzip kyve.zip 
-	rm kyve.zip  
-	mv evm-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_VERSION}  
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -117,10 +101,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 9 (Cosmos Hub)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_Cosmos}  
-	unzip kyve.zip  
-	rm kyve.zip  
-	mv kyve-cosmos-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Cosmos} 
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -129,10 +111,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 10 (Injective)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_Cosmos}  
-	unzip kyve.zip  
-	rm kkyve.zip  
-	mv kyve-cosmos-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Cosmos} 
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -141,10 +121,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 11 (Evmos Cosmos)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_Cosmos}  
-	unzip kyve.zip 
-	rm kyve.zip 
-	mv kyve-cosmos-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Cosmos}  	 
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -153,10 +131,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 12 (Axelar)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_Cosmos} 
-	unzip kyve.zip  
-	rm kyve.zip  
-	mv kyve-cosmos-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Cosmos} 	  
+	mv kyve /usr/bin/kyve
 	starting
 fi
 
@@ -165,10 +141,8 @@ then
 	echo ===============================================
 	echo ="ВНИМАНИЕ! Выбран пул 13 (Aurora)"=
 	echo ===============================================
-	wget -O kyve.zip ${LINK_KYVE_VERSION}  
-	unzip kyve.zip 
-	rm kyve.zip 
-	mv kyve-evm-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_VERSION}  
+	mv kyve /usr/bin/kyve
 	starting
 fi 
 
@@ -177,10 +151,8 @@ then
 	echo ===================================
 	echo ="ВНИМАНИЕ! Выбран пул 11 (Cronos)"=
 	echo ===================================
-	wget -O kyve.zip ${LINK_KYVE_Cosmos}  
-	unzip kyve.zip 
-	rm kyve.zip 
-	mv kyve-cosmos-linux /usr/bin/kyve
+	wget -O kyve ${LINK_KYVE_Cosmos}  
+	mv kyve /usr/bin/kyve
 	starting
 fi
 done
