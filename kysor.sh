@@ -67,7 +67,7 @@ const config: IConfig = {
 
     // the network you want to run on
     // currently only the testnet network "korellia" is available
-    network: "korellia",
+    network: "kyve-beta",
 
     // the amount of $KYVE you want to stake
     // will only get applied if you are not a validator yet
