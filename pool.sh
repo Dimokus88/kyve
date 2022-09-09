@@ -4,9 +4,9 @@ echo ="ВНИМАНИЕ! Выбрана РУЧНАЯ смена пула!"=
 echo ========================================
 starting (){
 	sudo chmod a+x /usr/bin/kyve
-	kyve --version
+	kyve 
 	sleep 2
-	$(which kyve) --name "${MONIKER}" --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network kyve-beta --verbose
+	$(which kyve) --poolId ${POOL} --mnemonic "${MNEMONIC}" -s "${STAKE}" --keyfile /root/arweave.json --network kyve-beta --verbose
 	echo =================================================================================================
 	echo ="Недостаточно средств для попадания в валидаторы, следующая попытка подключения через 2 минуты"=
 	echo =================================================================================================
