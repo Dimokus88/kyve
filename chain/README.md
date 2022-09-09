@@ -91,7 +91,7 @@ $binary tx distribution withdraw-rewards $valoper --from $address --fees 500$den
 ```
 Other commands for managing a node [can be found here](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
 
-[Back to top](https://github.com/Dimokus88/Kyve/blob/main/README.md#Kyve-validator-node-on-akash-network)
+[Back to top](https://github.com/Dimokus88/kyve/blob/main/chain/README.md#testnet-completed)
 
 **Thank you for using Akash Network!**
 
@@ -156,7 +156,7 @@ $binary tx distribution withdraw-rewards $valoper --from $address --fees 500$den
 ```
 Другие команды по управлению нодой [можете найти здесь](https://github.com/Dimokus88/guides/blob/main/Cosmos%20SDK/COMMAND.MD).
 
-[К началу](https://github.com/Dimokus88/Kyve/blob/main/README.md#Kyve-validator-node-on-akash-network)
+[К началу](https://github.com/Dimokus88/kyve/blob/main/chain/README.md#testnet-completed)
 
 **Спасибо что воспользовались Akash Network!**
 ___
