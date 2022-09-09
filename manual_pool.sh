@@ -2,7 +2,7 @@
 echo ========================================
 echo ="ВНИМАНИЕ! Выбрана РУЧНАЯ смена пула!"=
 echo ========================================
-starting(){
+starting (){
 	sudo chmod a+x /usr/bin/kyve
 	kyve --version
 	sleep 2
