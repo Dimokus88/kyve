@@ -4,10 +4,10 @@ echo ="ВНИМАНИЕ! Выбрана РУЧНАЯ смена пула!"=
 echo ========================================
 starting (){
 	sudo chmod a+x /usr/bin/kyve
-	Sleep 2
+	sleep 2
 	kyve wallets add "wallet" /root/arweave.json
 	kyve valaccounts create "valaccount"
-	kyve start --pool ${POOL} --account valaccount --wallet wallet --network kyve-beta --verbose	
+	kyve start --pool ${POOL} --account valaccount --wallet wallet --network beta --verbose	
 	echo =================================================================================================
 	echo ="Недостаточно средств для попадания в валидаторы, следующая попытка подключения через 2 минуты"=
 	echo =================================================================================================
