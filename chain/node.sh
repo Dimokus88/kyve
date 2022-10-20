@@ -47,7 +47,7 @@ binary=chaind
 wget $GITHUB_REPOSITORY
 tar -xvzf chain_linux_amd64.tar.gz
 chmod +x $binary
-
+cp $binary /usr/bin/$binary
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
 mv cosmovisor_linux_amd64 /usr/bin/cosmovisor
 #-------------------------------------------------
@@ -215,7 +215,7 @@ cat > /root/cosmovisor/run <<EOF
 #!/bin/bash
 exec 2>&1
 export DAEMON_HOME=/root/.kyve/
-export DAEMON_NAME=chaind
+export DAEMON_NAME=$binary
 export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
 exec cosmovisor start
 EOF
@@ -261,7 +261,7 @@ sleep 1m
 # -----------------------------------------------------------
 for ((;;))
   do    
-    tail -100 /var/log/$binary/current | grep -iv peer
+    tail -f /var/log/$binary/current | grep -iv peer
     sleep 10m
   done
 fi
