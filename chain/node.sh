@@ -50,6 +50,7 @@ chmod +x $binary
 cp ./$binary /usr/bin/$binary
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
 mv cosmovisor_linux_amd64 /usr/bin/cosmovisor
+chmod +x /usr/bin/cosmovisor
 #-------------------------------------------------
 
 #=======ИНИЦИАЛИЗАЦИЯ БИНАРНОГО ФАЙЛА================
@@ -261,7 +262,7 @@ sleep 1m
 # -----------------------------------------------------------
 for ((;;))
   do    
-    tail -f /var/log/$binary/current | grep -iv peer
+    tail -f /var/log/cosmovisor/current | grep -iv peer
     sleep 10m
   done
 fi
