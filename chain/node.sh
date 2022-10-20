@@ -60,6 +60,10 @@ $binary init "$MONIKER" --chain-id $CHAIN --home /root/$WORK_FOLDER
 sleep 5
 $binary config chain-id $CHAIN
 $binary config keyring-backend os
+chmod +x /usr/bin/cosmovisor
+mkdir -p /root/$WORK_FOLDER/cosmovisor/genesis/bin/ && \
+echo "{}" > /root/$WORK_FOLDER/cosmovisor/genesis/upgrade-info.json
+cp /usr/bin/$binary /root/$WORK_FOLDER/cosmovisor/genesis/bin/$binary
 #====================================================
 
 #===========ДОБАВЛЕНИЕ GENESIS.JSON===============
