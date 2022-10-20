@@ -72,12 +72,12 @@ then
 rm /root/$WORK_FOLDER/config/genesis.json
 	if [[ -n $GENESIS ]]
 	then
-	wget -O $HOME/$folder/config/genesis.json $GENESIS
-	DENOM=`cat $HOME/$folder/config/genesis.json | grep denom -m 1 | tr -d \"\, | sed "s/denom://" | tr -d \ `
+	wget -O $HOME/$WORK_FOLDER/config/genesis.json $GENESIS
+	DENOM=`cat $HOME/$WORK_FOLDER/config/genesis.json | grep denom -m 1 | tr -d \"\, | sed "s/denom://" | tr -d \ `
 	echo 'export DENOM='${DENOM} >> /root/.bashrc
 	else
 	curl -s "$SNAP_RPC"/genesis | jq .result.genesis >> /root/$WORK_FOLDER/config/genesis.json
-	DENOM=`curl -s "$SNAP_RPC"/genesis | grep denom -m 1 | tr -d \"\, | sed "s/denom://" | tr -d \ `
+	DENOM=tkyve
 	echo 'export DENOM='${DENOM} >> /root/.bashrc
 	fi
 echo $DENOM
