@@ -42,11 +42,12 @@ source /root/.bashrc
 #-------------------------- Установка GO и кмопиляция бинарного файла -----------------------
 INSTALL (){
 #-----------КОМПИЛЯЦИЯ БИНАРНОГО ФАЙЛА------------
-d /
+cd /
+binary=chaind
 wget $GITHUB_REPOSITORY
 tar -xvzf chain_linux_amd64.tar.gz
 chmod +x $binary
-cp $binary /usr/bin/
+
 wget https://github.com/KYVENetwork/chain/releases/download/v0.0.1/cosmovisor_linux_amd64 && \
 mv cosmovisor_linux_amd64 /usr/bin/cosmovisor
 #-------------------------------------------------
